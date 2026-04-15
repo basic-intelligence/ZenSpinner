@@ -9,7 +9,7 @@ A collection of ~90 zen, stoic, and timeless quotes to replace Claude Code's def
 Paste this into Claude Code:
 
 ```
-Add the spinnerVerbs config from https://github.com/basic-engineering/ZenSpinner/blob/main/zenspinner.json to my Claude Code settings.json (merge it in — don't overwrite anything else).
+Add the spinnerVerbs config from https://github.com/basic-intelligence/ZenSpinner/blob/main/zenspinner.json to my Claude Code settings.json (merge it in — don't overwrite anything else).
 ```
 
 Claude Code will fetch the file, merge the `spinnerVerbs` block into your `~/.claude/settings.json`, and the next time you see a spinner it'll quote Marcus Aurelius instead of saying "Synthesizing."
