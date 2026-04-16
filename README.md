@@ -150,6 +150,24 @@ Download the Hermes skin from https://github.com/basic-intelligence/ZenSpinner/b
 
 Replaces the `thinking_verbs` in your Hermes spinner — the text shown while the agent is reasoning. Instead of default verbs, you'll see quotes like *"Be water, my friend"* or *"The obstacle is the path"* while you wait.
 
+### Bonus: Random quote on new chat
+
+Want a zen quote every time you start a new conversation? The `zen-quotes.json` file has ~90 quotes ready to go.
+
+```bash
+# Copy the quotes file
+curl -sL https://raw.githubusercontent.com/basic-intelligence/ZenSpinner/main/zen-quotes.json \
+  -o /tmp/zen-quotes.json
+```
+
+Then tell your agent (in your system prompt or memory file):
+
+```
+On every new chat, open with one random quote from /tmp/zen-quotes.json.
+```
+
+The agent picks a random quote each session — a small moment of calm before the work begins.
+
 ### How Hermes skins work
 
 Hermes skins are YAML files in `~/.hermes/skins/`. The `thinking_verbs` key maps directly to Claude Code's `spinnerVerbs.verbs`. You can:
