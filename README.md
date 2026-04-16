@@ -123,3 +123,66 @@ Open `~/.claude/settings.json` and add the `spinnerVerbs` key from [`zenspinner.
 - `mode: "append"` — keep the defaults and add these too
 
 Restart Claude Code and enjoy the calm.
+
+## Install via Hermes Agent
+
+Hermes Agent uses **skin YAML files** for theme customization — including spinner thinking verbs.
+
+### Quick install
+
+```bash
+# Download the skin file
+mkdir -p ~/.hermes/skins
+curl -sL https://raw.githubusercontent.com/basic-intelligence/ZenSpinner/main/hermes-skin.yaml \
+  -o ~/.hermes/skins/zenspinner.yaml
+
+# Activate it
+# Add this line to ~/.hermes/config.yaml:
+#   display.skin: zenspinner
+```
+
+Or paste this into Hermes:
+
+```
+Download the Hermes skin from https://github.com/basic-intelligence/ZenSpinner/blob/main/hermes-skin.yaml and save it to ~/.hermes/skins/zenspinner.yaml, then set display.skin to zenspinner in my config.
+```
+
+### What it does
+
+Replaces the `thinking_verbs` in your Hermes spinner — the text shown while the agent is reasoning. Instead of default verbs, you'll see quotes like *"Be water, my friend"* or *"The obstacle is the path"* while you wait.
+
+### Bonus: Random quote on new chat
+
+Want a zen quote every time you start a new conversation? The `zen-quotes.json` file has ~90 quotes ready to go.
+
+```bash
+# Copy the quotes file
+curl -sL https://raw.githubusercontent.com/basic-intelligence/ZenSpinner/main/zen-quotes.json \
+  -o ~/.hermes/zen-quotes.json
+```
+
+Then tell your agent (in your system prompt or memory file):
+
+```
+On every new chat, open with one random quote from /tmp/zen-quotes.json.
+```
+
+The agent picks a random quote each session — a small moment of calm before the work begins.
+
+### How Hermes skins work
+
+Hermes skins are YAML files in `~/.hermes/skins/`. The `thinking_verbs` key maps directly to Claude Code's `spinnerVerbs.verbs`. You can:
+
+- **Use as a standalone skin** — activates all quote defaults plus the zen verbs
+- **Merge into your existing skin** — copy just the `thinking_verbs` block into your current skin YAML
+
+```yaml
+# In your existing skin file, add:
+spinner:
+  thinking_verbs:
+    - "Nature does not hurry, yet everything is accomplished"
+    - "What you seek is seeking you"
+    # ... rest of the quotes
+```
+
+For more on Hermes skins: [Hermes Agent docs](https://github.com/NousResearch/hermes-agent)
