@@ -132,6 +132,7 @@ Hermes Agent uses **skin YAML files** for theme customization — including spin
 
 ```bash
 # Download the skin file
+mkdir -p ~/.hermes/skins
 curl -sL https://raw.githubusercontent.com/basic-intelligence/ZenSpinner/main/hermes-skin.yaml \
   -o ~/.hermes/skins/zenspinner.yaml
 
