@@ -158,7 +158,7 @@ Want a zen quote every time you start a new conversation? The `zen-quotes.json` 
 ```bash
 # Copy the quotes file
 curl -sL https://raw.githubusercontent.com/basic-intelligence/ZenSpinner/main/zen-quotes.json \
-  -o /tmp/zen-quotes.json
+  -o ~/.hermes/zen-quotes.json
 ```
 
 Then tell your agent (in your system prompt or memory file):
